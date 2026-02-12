@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx prisma db push:*)",
+      "Bash(set:*)",
+      "Bash(npx prisma generate:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "mcp__web-reader__webReader",
+      "Bash(npx create-next-app:*)",
+      "Bash(dir:*)",
+      "Bash(npx openspec validate:*)",
+      "Bash(npx prisma migrate reset:*)",
+      "Bash(openspec:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "secondme-skills@secondme-skills": true
+  }
+}

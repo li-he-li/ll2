@@ -1,0 +1,877 @@
+{
+  "version": "2.7",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 305,
+      "y": 96,
+      "name": "砍价大厅页面",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg-page",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "9Dprk",
+          "name": "导航栏",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$bg-card",
+          "gap": 40,
+          "padding": [
+            0,
+            40
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "BGFtL",
+              "name": "Logo",
+              "fill": "$primary",
+              "content": "多多砍价",
+              "fontFamily": "Inter",
+              "fontSize": 24,
+              "fontWeight": "bold"
+            },
+            {
+              "type": "frame",
+              "id": "o7AtU",
+              "name": "搜索框",
+              "width": 500,
+              "height": 40,
+              "fill": "$bg-page",
+              "cornerRadius": 20,
+              "gap": 12,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "NF3hs",
+                  "name": "searchIcon",
+                  "content": "🔍",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "ctmMx",
+                  "name": "搜索提示",
+                  "fill": "$text-light",
+                  "content": "搜索商品",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fpVOc",
+              "name": "导航链接",
+              "width": "fill_container",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YkZXE",
+                  "name": "homeLink",
+                  "fill": "$primary",
+                  "content": "首页",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "JMc0v",
+                  "name": "砍价大厅外框",
+                  "fill": "$primary",
+                  "cornerRadius": 20,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#E54C3C40",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 4
+                  },
+                  "padding": [
+                    8,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IF6mO",
+                      "name": "bargainHallText",
+                      "fill": "$bg-card",
+                      "content": "砍价大厅",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "BtIss",
+                  "name": "发布商品按钮",
+                  "fill": "$primary-light",
+                  "cornerRadius": 20,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#FF6B6B40",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 4
+                  },
+                  "padding": [
+                    8,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "RFyTb",
+                      "name": "publishText",
+                      "fill": "$bg-card",
+                      "content": "+ 发布商品",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ye3ey",
+                  "name": "我的砍价外框",
+                  "fill": "$bg-page",
+                  "cornerRadius": 20,
+                  "stroke": {
+                    "thickness": 1.5,
+                    "fill": "$primary"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#00000010",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 4
+                  },
+                  "padding": [
+                    8,
+                    20
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "4Mepz",
+                      "name": "myBargainText",
+                      "fill": "$primary",
+                      "content": "我的砍价",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1rXZ5",
+              "name": "账号设置按钮",
+              "fill": "$primary",
+              "cornerRadius": 20,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#E54C3C40",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 8
+              },
+              "gap": 8,
+              "padding": [
+                8,
+                20
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "2zv3W",
+                  "name": "accountIcon",
+                  "content": "👤",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "5oIww",
+                  "name": "accountText",
+                  "fill": "$bg-card",
+                  "content": "账号设置",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "ainAn",
+                  "name": "dropdownIcon",
+                  "fill": "$bg-card",
+                  "content": "▼",
+                  "fontFamily": "Inter",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dkrOF",
+          "name": "主体内容",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            24,
+            40
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "QLaHY",
+              "name": "标题区",
+              "width": "fill_container",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "7CXVF",
+                  "name": "pageTitle",
+                  "fill": "$text-primary",
+                  "content": "🔥 砍价大厅",
+                  "fontFamily": "Inter",
+                  "fontSize": 28,
+                  "fontWeight": "bold"
+                },
+                {
+                  "type": "text",
+                  "id": "3JsQv",
+                  "name": "pageSubtitle",
+                  "fill": "$text-secondary",
+                  "content": "邀请好友帮忙砍价，0元免费拿好物！",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "X0o7t",
+              "name": "商品网格",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0sRAF",
+                  "name": "第一行",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "LyXWp",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card1",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "Apple iPhone 15 Pro Max 256GB"
+                        },
+                        "Gg6re": {
+                          "width": 180
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥5,980"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥6,999"
+                        },
+                        "0iGPY": {
+                          "content": "¥7,999"
+                        },
+                        "FOH1D": {
+                          "content": "小红正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 23:45:12"
+                        }
+                      }
+                    },
+                    {
+                      "id": "lQ0CK",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card2",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "iPad Pro 11英寸 M2芯片 256GB"
+                        },
+                        "Gg6re": {
+                          "width": 150
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥4,200"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥5,499"
+                        },
+                        "0iGPY": {
+                          "content": "¥6,199"
+                        },
+                        "FOH1D": {
+                          "content": "小明正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 18:30:45"
+                        }
+                      }
+                    },
+                    {
+                      "id": "PPRej",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card3",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "AirPods Pro 2代 主动降噪"
+                        },
+                        "Gg6re": {
+                          "width": 200
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥1,500"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥1,799"
+                        },
+                        "0iGPY": {
+                          "content": "¥1,899"
+                        },
+                        "FOH1D": {
+                          "content": "阿华正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 12:15:30"
+                        }
+                      }
+                    },
+                    {
+                      "id": "I7qYb",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card4",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "Nintendo Switch OLED 版主机"
+                        },
+                        "Gg6re": {
+                          "width": 120
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥1,800"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥2,299"
+                        },
+                        "0iGPY": {
+                          "content": "¥2,599"
+                        },
+                        "FOH1D": {
+                          "content": "大伟正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 08:42:18"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hpSPM",
+                  "name": "第二行",
+                  "width": "fill_container",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "id": "zH7hU",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card5",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "Dyson 戴森吹风机 HD08"
+                        },
+                        "Gg6re": {
+                          "width": 220
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥2,100"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥2,690"
+                        },
+                        "0iGPY": {
+                          "content": "¥2,990"
+                        },
+                        "FOH1D": {
+                          "content": "莉莉正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 05:20:00"
+                        }
+                      }
+                    },
+                    {
+                      "id": "OCSoi",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card6",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "小米手环8 Pro NFC版"
+                        },
+                        "Gg6re": {
+                          "width": 240
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥320"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥399"
+                        },
+                        "0iGPY": {
+                          "content": "¥499"
+                        },
+                        "FOH1D": {
+                          "content": "强哥正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 02:58:45"
+                        }
+                      }
+                    },
+                    {
+                      "id": "L5wf1",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card7",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "Sony WH-1000XM5 无线降噪耳机"
+                        },
+                        "Gg6re": {
+                          "width": 190
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥1,850"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥2,299"
+                        },
+                        "0iGPY": {
+                          "content": "¥2,499"
+                        },
+                        "FOH1D": {
+                          "content": "阿杰正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 15:30:00"
+                        }
+                      }
+                    },
+                    {
+                      "id": "AQlNb",
+                      "type": "ref",
+                      "ref": "6AiBD",
+                      "name": "card8",
+                      "descendants": {
+                        "pOgA4": {
+                          "content": "Keychron K2 Pro 机械键盘 RGB"
+                        },
+                        "Gg6re": {
+                          "width": 160
+                        },
+                        "v5Krf": {
+                          "content": "已砍 ¥420"
+                        },
+                        "1a3if": {
+                          "content": "/ 目标 ¥528"
+                        },
+                        "0iGPY": {
+                          "content": "¥598"
+                        },
+                        "FOH1D": {
+                          "content": "小雨正在砍价"
+                        },
+                        "br8LU": {
+                          "content": "还剩 09:15:30"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "6AiBD",
+      "x": 1500,
+      "y": 100,
+      "name": "砍价商品卡片",
+      "reusable": true,
+      "width": 320,
+      "height": 480,
+      "fill": "$bg-card",
+      "cornerRadius": 12,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#00000010",
+        "offset": {
+          "x": 0,
+          "y": 2
+        },
+        "blur": 8
+      },
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "MQDkg",
+          "name": "商品图片",
+          "width": "fill_container",
+          "height": 200,
+          "fill": "$primary-bg",
+          "cornerRadius": [
+            12,
+            12,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "PskIX",
+              "name": "imgPlaceholder",
+              "fill": "$primary",
+              "content": "📦",
+              "fontFamily": "Inter",
+              "fontSize": 48,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "F0VzG",
+          "name": "商品信息",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "c5LQv",
+              "name": "标题",
+              "width": "fill_container",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pOgA4",
+                  "name": "商品标题",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "商品名称",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FpnNv",
+              "name": "进度区",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gat5g",
+                  "name": "进度条",
+                  "width": "fill_container",
+                  "height": 8,
+                  "fill": "$primary-bg",
+                  "cornerRadius": 4,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Gg6re",
+                      "name": "进度填充",
+                      "width": 180,
+                      "height": "fill_container",
+                      "fill": "$primary",
+                      "cornerRadius": 4
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4BJzP",
+                  "name": "价格信息",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "v5Krf",
+                      "name": "currentPrice",
+                      "fill": "$primary",
+                      "content": "已砍 ¥0",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1a3if",
+                      "name": "targetPrice",
+                      "fill": "$text-light",
+                      "content": "/ 目标 ¥0",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "odaeh",
+                  "name": "底价信息",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Bdjbz",
+                      "name": "originalPriceLabel",
+                      "fill": "$text-light",
+                      "content": "发布价",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0iGPY",
+                      "name": "底价金额",
+                      "fill": "$text-secondary",
+                      "content": "¥199",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "OG9uO",
+              "name": "用户信息",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "jIjur",
+                  "name": "用户头像",
+                  "width": 32,
+                  "height": 32,
+                  "fill": "$primary-bg",
+                  "cornerRadius": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "p5cPQ",
+                      "name": "avatarText",
+                      "content": "👤",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FOH1D",
+                  "name": "用户昵称",
+                  "fill": "$text-secondary",
+                  "content": "用户正在砍价",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fXqrP",
+              "name": "剩余时间",
+              "width": "fill_container",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TPuRh",
+                  "name": "timeIcon",
+                  "content": "⏰",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "br8LU",
+                  "name": "时间文本",
+                  "fill": "$text-secondary",
+                  "content": "还剩 00:00:00",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FDwsU",
+              "name": "砍价按钮",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "$primary",
+              "cornerRadius": 22,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#E54C3C40",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 8
+              },
+              "padding": [
+                0,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "K9cMj",
+                  "name": "btnText",
+                  "fill": "$bg-card",
+                  "content": "帮他砍一刀 🔪",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "bold"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg-card": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "bg-page": {
+      "type": "color",
+      "value": "#F5F5F5"
+    },
+    "border-color": {
+      "type": "color",
+      "value": "#EEEEEE"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#E54C3C"
+    },
+    "primary-bg": {
+      "type": "color",
+      "value": "#FFE5E5"
+    },
+    "primary-light": {
+      "type": "color",
+      "value": "#FF6B6B"
+    },
+    "text-light": {
+      "type": "color",
+      "value": "#999999"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#333333"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#666666"
+    }
+  }
+}

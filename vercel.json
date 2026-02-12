@@ -1,0 +1,48 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "prisma generate && next build",
+  "outputDirectory": ".next",
+  "regions": ["hkg1"],
+  "env": {
+    "DATABASE_URL": "@database-url",
+    "DIRECT_URL": "@direct-url",
+    "SECONDME_APP_ID": "@secondme-app-id",
+    "SECONDME_APP_SECRET": "@secondme-app-secret",
+    "SECONDME_OAUTH_ENDPOINT": "@secondme-oauth-endpoint",
+    "SECONDME_API_ENDPOINT": "@secondme-api-endpoint",
+    "NEXTAUTH_URL": "@nextauth-url",
+    "NEXT_PUBLIC_SECONDME_APP_ID": "@public-secondme-app-id",
+    "BLOB_READ_WRITE_TOKEN": "@blob-read-write-token"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}

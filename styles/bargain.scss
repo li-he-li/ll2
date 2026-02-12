@@ -1,0 +1,398 @@
+// 砍价大厅页面样式
+// 可以选择性地导入到 globals.css 或组件中使用
+
+// 拼多多风格配色变量
+$primary: #E54C3C;
+$primary-light: #FF6B6B;
+$primary-bg: #FFE5E5;
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-light: #999999;
+$bg-card: #FFFFFF;
+$bg-page: #F5F5F5;
+$border-color: #EEEEEE;
+
+// 阴影变量
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-button: 0 2px 8px rgba(229, 76, 60, 0.25);
+$shadow-button-light: 0 2px 4px rgba(255, 107, 107, 0.25);
+
+// 导航栏样式
+.navbar {
+  background-color: $bg-card;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  &-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    gap: 40px;
+  }
+}
+
+// Logo 样式
+.logo {
+  color: $primary;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+// 搜索框样式
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 40px;
+  gap: 12px;
+  padding: 0 16px;
+  background-color: $bg-page;
+  border-radius: 20px;
+
+  &__icon {
+    font-size: 16px;
+  }
+
+  &__placeholder {
+    color: $text-light;
+    font-size: 14px;
+  }
+}
+
+// 导航链接样式
+.nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 32px;
+
+  &__item {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    // 激活状态 - 实心按钮
+    &--active {
+      background-color: $primary;
+      color: $bg-card;
+      padding: 8px 20px;
+      border-radius: 20px;
+      box-shadow: $shadow-button;
+    }
+
+    // 次要状态 - 空心按钮
+    &--outlined {
+      background-color: $bg-page;
+      color: $primary;
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1.5px solid $primary;
+      box-shadow: $shadow-card;
+    }
+
+    // 发布按钮
+    &--publish {
+      background-color: $primary-light;
+      color: $bg-card;
+      padding: 8px 20px;
+      border-radius: 20px;
+      box-shadow: $shadow-button-light;
+    }
+  }
+}
+
+// 账号设置按钮
+.account-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background-color: $primary;
+  color: $bg-card;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: $shadow-button;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__icon {
+    font-size: 16px;
+  }
+
+  &__dropdown {
+    font-size: 10px;
+  }
+}
+
+// 页面标题区
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  &__title {
+    color: $text-primary;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    color: $text-secondary;
+    font-size: 14px;
+  }
+}
+
+// 商品网格
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// 商品卡片
+.product-card {
+  width: 320px;
+  background-color: $bg-card;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  // 商品图片区
+  &__image {
+    height: 200px;
+    background-color: $primary-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px 12px 0 0;
+
+    &-icon {
+      font-size: 48px;
+    }
+  }
+
+  // 商品信息区
+  &__info {
+    padding: 16px;
+  }
+
+  // 商品标题
+  &__title {
+    color: $text-primary;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // 进度区
+  &__progress {
+    margin-bottom: 12px;
+    space-y: 8px;
+  }
+
+  // 进度条
+  &__progress-bar {
+    height: 8px;
+    width: 100%;
+    background-color: $primary-bg;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+
+    &-fill {
+      height: 100%;
+      background-color: $primary;
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
+  }
+
+  // 价格信息
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+
+    &-current {
+      color: $primary;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &-target {
+      color: $text-light;
+      font-size: 12px;
+    }
+
+    &-publish {
+      color: $text-light;
+      font-size: 12px;
+
+      &-value {
+        color: $text-secondary;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  // 用户信息
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+
+    &-avatar {
+      width: 32px;
+      height: 32px;
+      background-color: $primary-bg;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-name {
+      color: $text-secondary;
+      font-size: 12px;
+    }
+  }
+
+  // 剩余时间
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 12px;
+
+    &-icon {
+      font-size: 12px;
+    }
+
+    &-text {
+      color: $text-secondary;
+      font-size: 12px;
+    }
+  }
+
+  // 砍价按钮
+  &__button {
+    width: 100%;
+    height: 44px;
+    background-color: $primary;
+    color: $bg-card;
+    border: none;
+    border-radius: 22px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: $shadow-button;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $primary-light;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
+
+// 动画
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.product-card__button {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .navbar {
+    &-container {
+      padding: 0 20px;
+    }
+
+    &-content {
+      gap: 20px;
+    }
+  }
+
+  .search-box {
+    width: 200px;
+  }
+
+  .nav-links {
+    gap: 16px;
+
+    &__item {
+      font-size: 12px;
+      padding: 6px 12px !important;
+    }
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    &__title {
+      font-size: 24px;
+    }
+  }
+}

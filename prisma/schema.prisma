@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  directUrl  = env("DIRECT_URL")
+}
+
+model User {
+  id                 String            @id @default(cuid())
+  secondmeId         String            @unique
+  accessToken        String
+  refreshToken       String?
+  expiresAt          DateTime?
+  name               String?
+  email              String?
+  image              String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  publishedBargains  BargainSession[]   @relation("PublisherBargains")
+  bargainedSessions   BargainSession[]   @relation("BargainerBargains")
+  publishedProducts   Product[]          @relation("PublishedProducts")
+
+  @@map("users")
+}
+
+model BargainSession {
+  id            String      @id @default(cuid())
+  productId     String
+  publisherId   String
+  bargainerId   String
+  publishPrice  Int
+  currentPrice  Int
+  targetPrice   Int
+  status        String      @default("negotiating") // negotiating, completed, failed
+  finalPrice    Int?
+  createdAt     DateTime    @default(now())
+  completedAt   DateTime?
+  publisher     User        @relation("PublisherBargains", fields: [publisherId], references: [id])
+  bargainer     User        @relation("BargainerBargains", fields: [bargainerId], references: [id])
+  messages      BargainMessage[]
+
+  @@map("bargain_sessions")
+}
+
+model BargainMessage {
+  id          String      @id @default(cuid())
+  sessionId    String
+  senderId     String
+  senderRole   String      // publisher or bargainer
+  content      String
+  timestamp    DateTime    @default(now())
+  isFromAI    Boolean     @default(true)
+  session      BargainSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@map("bargain_messages")
+}
+
+model Product {
+  id            String    @id @default(cuid())
+  title         String
+  description    String?
+  publishPrice  Int       // Price in cents
+  imageUrl      String
+  publisherId   String
+  category      String?
+  durationDays  Int       // 1, 7, or 30
+  expiresAt     DateTime
+  status        String    @default("active") // active, expired, deleted
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  publisher     User       @relation("PublishedProducts", fields: [publisherId], references: [id])
+
+  @@index([publisherId, status])
+  @@index([status, expiresAt])
+  @@map("products")
+}
