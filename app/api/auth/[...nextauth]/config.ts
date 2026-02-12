@@ -21,7 +21,7 @@ async function handleSecondMeCallback(code: string) {
     body: buildFormBody({
       grant_type: 'authorization_code',
       code,
-      redirect_uri: `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/callback/secondme`,
+      redirect_uri: `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/callback`,
       client_id: process.env.SECONDME_APP_ID!,
       client_secret: process.env.SECONDME_APP_SECRET!,
     }),

@@ -13,7 +13,15 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
   const error = searchParams.get("error");
 
+  // 详细日志：记录所有回调参数
+  console.log('=== OAuth 回调触发 ===');
+  console.log('请求 URL:', request.url);
+  console.log('查询参数:', Object.fromEntries(searchParams.entries()));
+  console.log('环境变量 NEXTAUTH_URL:', process.env.NEXTAUTH_URL);
+  console.log('环境变量 NODE_ENV:', process.env.NODE_ENV);
+
   if (error) {
+    console.error('OAuth 返回错误:', error);
     return NextResponse.redirect(new URL("/?error=" + error, request.url));
   }
 
@@ -22,6 +30,13 @@ export async function GET(request: NextRequest) {
   }
 
   const redirectUri = `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/callback`;
+
+  console.log('OAuth 回调信息:', {
+    code: code.substring(0, 20) + '...',
+    redirectUri,
+    nextAuthUrl: process.env.NEXTAUTH_URL,
+    nodeEnv: process.env.NODE_ENV,
+  });
 
   try {
     // 官方文档: POST https://app.mindos.com/gate/lab/api/oauth/token/code
