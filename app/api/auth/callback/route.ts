@@ -149,19 +149,34 @@ export async function GET(request: NextRequest) {
     const response = NextResponse.redirect(new URL("/dashboard", request.url));
 
     // 设置 session cookie
-    // 注意：同时设置 userId 和 secondmeId 确保兼容性
-    response.cookies.set("secondme_session", JSON.stringify({
-      userId: secondmeId,  // 兼容性：设置为 secondmeId
-      secondmeId: secondmeId,  // 明确的 secondmeId
+    const sessionData = {
+      userId: secondmeId,
+      secondmeId: secondmeId,
       accessToken: tokens.accessToken,
       name: userInfo.name,
       email: userInfo.email,
       image: userInfo.avatarUrl || userInfo.avatar,
-    }), {
+    };
+
+    console.log('准备设置 cookie:', {
+      sessionData,
+      cookieOptions: {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: tokens.expiresIn || 7200,
+        path: '/',
+      },
+      nodeEnv: process.env.NODE_ENV,
+    });
+
+    // 注意：同时设置 userId 和 secondmeId 确保兼容性
+    response.cookies.set("secondme_session", JSON.stringify(sessionData), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: tokens.expiresIn || 7200,
+      path: '/',  // 明确设置路径
     });
 
     return response;
